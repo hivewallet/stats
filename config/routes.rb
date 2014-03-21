@@ -1,3 +1,5 @@
 HiveStats::Application.routes.draw do
-  root 'releases#index'
+  resources :snapshots, only: [:show]
+
+  root 'snapshots#index'
 end

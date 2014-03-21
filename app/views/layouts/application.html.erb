@@ -10,5 +10,10 @@
 
 <%= yield %>
 
+<footer>
+  data source: <a href="https://api.github.com/repos/hivewallet/hive-osx/releases" >Github</a>
+  <%= link_to_unless_current 'Home', root_path %>
+</footer>
+
 </body>
 </html>

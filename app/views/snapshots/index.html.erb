@@ -1,0 +1,39 @@
+<h1>Hive Production Release Download Stats</h1>
+<h2>last update at: <%= @latest_snapshot.created_at %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tag</th>
+      <th>Download count</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @latest_snapshot.releases.each do |release| %>
+      <tr>
+        <td><%= release.tag %></td>
+        <td><%= release.download_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Snapshot Archive</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Created at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @snapshots.each do |snapshot| %>
+      <tr>
+        <td><%= link_to snapshot.created_at, snapshot %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

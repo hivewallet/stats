@@ -1,25 +1,20 @@
 <h1>Hive Production Release Download Stats</h1>
+<h2>Snapshot at <%= @snapshot.created_at %></h2>
 
 <table>
   <thead>
     <tr>
       <th>Tag</th>
       <th>Download count</th>
-      <th>Last updated at</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @releases.each do |release| %>
+    <% @snapshot.releases.each do |release| %>
       <tr>
         <td><%= release.tag %></td>
         <td><%= release.download_count %></td>
-        <td><%= release.updated_at %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<footer>
-  data source: <a href="https://api.github.com/repos/hivewallet/hive-osx/releases" >Github</a>
-</footer>
