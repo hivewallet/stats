@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'github-release-stats'
+gem 'rails_on_heroku'
 
 group :doc do
   gem 'sdoc', require: false
