@@ -8,12 +8,14 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
+    <%= link_to_unless_current 'Home', root_path %>
 
-<footer>
-  data source: <a href="https://api.github.com/repos/hivewallet/hive-osx/releases" >Github</a>
-  <%= link_to_unless_current 'Home', root_path %>
-</footer>
+    <%= yield %>
 
+    <footer>
+      data source: <a href="https://api.github.com/repos/hivewallet/hive-osx/releases" >Github</a>
+    </footer>
+  </div>
 </body>
 </html>
