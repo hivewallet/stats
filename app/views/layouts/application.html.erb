@@ -11,6 +11,18 @@
   <div class="container">
     <%= link_to_unless_current 'Home', root_path %>
 
+    <h1>Hive Android: Download Stats</h1>
+
+    <table>
+        <tr><td>Total installs</td><td>1888</td></tr>
+        <tr><td>Current installs</td><td>1383</td></tr>
+        <tr><td>Avg. daily installs (last 7 days)</td><td>61</td></tr>
+        <tr><td>Number of ratings</td><td>50</td></tr>
+        <tr><td>Average rating</td><td>4.5 / 5</td></tr>
+    </table>
+
+    data source: manual import on 2014-07-03
+
     <%= yield %>
 
     <footer>
