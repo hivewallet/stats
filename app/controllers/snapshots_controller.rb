@@ -2,7 +2,7 @@ class SnapshotsController < ApplicationController
   before_action :set_snapshot, only: [:show]
 
   def index
-    @snapshots = Snapshot.all
+    @snapshots = Snapshot.last(20).reverse
     @latest_snapshot = @snapshots.last
   end
 
