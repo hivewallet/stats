@@ -14,7 +14,7 @@ namespace :hive_stats do
 
   desc "pull hive web & ios stats from cloudant, and save to database"
   task snapshot_web: :environment do
-    url = "https://hive.cloudant.com/_users"
+    url = "https://#{ENV['DB_HOST']}/_users"
     json_response = open(url, http_basic_authentication: [ENV['DB_USER'], ENV['DB_PASSWORD']]).read
     user_docs = JSON.parse json_response
     WebWalletCount.create! count: user_docs['doc_count'], raw: json_response
