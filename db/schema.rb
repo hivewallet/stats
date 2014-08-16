@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321064355) do
+ActiveRecord::Schema.define(version: 20140816085915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20140321064355) do
   add_index "releases", ["snapshot_id"], name: "index_releases_on_snapshot_id", using: :btree
 
   create_table "snapshots", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "web_wallet_counts", force: true do |t|
+    t.integer  "count"
+    t.text     "raw"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

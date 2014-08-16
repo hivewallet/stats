@@ -1,3 +1,27 @@
+<h1>Hive Web & iOS: Wallet Stats</h1>
+
+<% if @latest_web_snapshot.present? %>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Created at</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @web_snapshots.each do |snapshot| %>
+          <tr>
+            <td><%= snapshot.created_at %></td>
+            <td><%= snapshot.count %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+<% end %>
+
 <h1>Hive OS X: Download Stats</h1>
 
 <% if @latest_snapshot.present? %>
