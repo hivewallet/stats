@@ -3,10 +3,10 @@ class SnapshotsController < ApplicationController
 
   def index
     @snapshots = Snapshot.last(20).reverse
-    @latest_snapshot = @snapshots.last
+    @latest_snapshot = @snapshots.first
 
     @web_snapshots = WebWalletCount.last(20).reverse
-    @latest_web_snapshot = @web_snapshots.last
+    @latest_web_snapshot = @web_snapshots.first
   end
 
   def show
